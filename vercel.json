@@ -15,8 +15,8 @@
       "dest": "/static/$1"
     },
     {
-      "src": "^/(.*)\\.(js|css|png|jpg|jpeg|gif|ico|json|map|txt|svg|woff|woff2|ttf|eot)$",
-      "dest": "/$1.$2"
+      "src": "^/(.*\\.(js|css|png|jpg|jpeg|gif|ico|json|map|txt|svg|woff|woff2|ttf|eot))$",
+      "dest": "/$1"
     },
     {
       "src": "^/(.*)",
@@ -27,14 +27,20 @@
     "enabled": true,
     "autoJobCancelation": true
   },
+  "buildCommand": "npm run vercel-build",
+  "outputDirectory": "build",
+  "installCommand": "npm install --legacy-peer-deps",
+  "framework": "create-react-app",
+  "regions": ["iad1"],
   "env": {
-    "NODE_ENV": "production"
+    "NODE_ENV": "production",
+    "CI": "false",
+    "GENERATE_SOURCEMAP": "false"
   },
   "build": {
     "env": {
       "NODE_ENV": "production"
     }
   },
-  "regions": ["iad1"],
   "public": true
 }
