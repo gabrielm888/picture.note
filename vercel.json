@@ -1,18 +1,16 @@
 {
   "version": 2,
-  "builds": [
-    {
-      "src": "package.json",
-      "use": "@vercel/static-build",
-      "config": {
-        "distDir": "build"
-      }
-    }
-  ],
+  "framework": "create-react-app",
+  "buildCommand": "npm run vercel-build",
+  "outputDirectory": "build",
   "routes": [
     {
       "src": "/static/(.*)",
       "dest": "/static/$1"
+    },
+    {
+      "src": "/(.*\\.(js|css|png|jpg|jpeg|gif|ico|json|map|txt|svg|woff|woff2|ttf|eot)$)",
+      "dest": "/$1"
     },
     {
       "src": "/favicon.ico",
@@ -23,35 +21,11 @@
       "dest": "/manifest.json"
     },
     {
-      "src": "^/(.*)",
-      "dest": "/index.html"
-    },
-    {
-      "src": "^/static/(.*)",
-      "dest": "/static/$1"
-    },
-    {
-      "src": "^/manifest.json",
-      "dest": "/manifest.json"
-    },
-    {
-      "src": "^/service-worker.js",
-      "dest": "/service-worker.js"
-    },
-    {
-      "src": "^/asset-manifest.json",
+      "src": "/asset-manifest.json",
       "dest": "/asset-manifest.json"
     },
     {
-      "src": "^/logo\\.(.*)\\.(svg|png|ico)",
-      "dest": "/logo.$1.$2"
-    },
-    {
-      "src": "^/(.*)\\.(js|css|png|jpg|jpeg|gif|ico|json|map|txt|svg|woff|woff2|ttf|eot)$",
-      "dest": "/$1.$2"
-    },
-    {
-      "src": "^/(.*)",
+      "src": "/(.*)",
       "dest": "/index.html"
     }
   ],
