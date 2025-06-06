@@ -7,6 +7,12 @@
         "root": ["./src"],
         "extensions": [".js", ".jsx", ".ts", ".tsx"]
       }
-    ]
-  ]
+    ],
+    "@babel/plugin-transform-export-namespace-from"
+  ],
+  "env": {
+    "production": {
+      "plugins": ["transform-remove-console"]
+    }
+  }
 }
