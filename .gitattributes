@@ -1,0 +1,11 @@
+# Set default behavior to automatically normalize line endings
+* text=auto eol=lf
+
+# Don't normalize binary files
+*.{png,jpg,jpeg,gif,ico,svg,woff,woff2,ttf,eot} binary
+
+# Don't normalize package-lock.json to prevent merge conflicts
+package-lock.json binary
+
+# Don't normalize yarn.lock to prevent merge conflicts
+yarn.lock binary

@@ -1,0 +1,40 @@
+{
+  "extends": "@react-native/typescript-config/tsconfig.json",
+  "compilerOptions": {
+    "target": "esnext",
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "jsx": "react-native",
+    "strict": true,
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "resolveJsonModule": true,
+    "baseUrl": ".",
+    "jsxImportSource": "react",
+    "lib": ["es2017", "dom"],
+    "paths": {
+      "*": ["src/*"],
+      "react": ["./node_modules/@types/react"],
+      "react-native": ["./node_modules/@types/react-native"],
+      "@react-navigation/*": ["./node_modules/@react-navigation/*/lib/commonjs"]
+    },
+    "typeRoots": [
+      "./node_modules/@types",
+      "./src/types"
+    ]
+  },
+  "include": [
+    "**/*.ts",
+    "**/*.tsx",
+    "**/*.web.ts",
+    "**/*.web.tsx",
+    "src/**/*.d.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "**/__tests__",
+    "**/__mocks__"
+  ]
+}

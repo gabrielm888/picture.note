@@ -1,0 +1,72 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "package.json",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "web-build"
+      }
+    }
+  ],
+  "routes": [
+    {
+      "src": "/static/(.*)",
+      "dest": "/static/$1"
+    },
+    {
+      "src": "/favicon.ico",
+      "dest": "/favicon.ico"
+    },
+    {
+      "src": "/manifest.json",
+      "dest": "/manifest.json"
+    },
+    {
+      "src": "^/(.*)",
+      "dest": "/index.html"
+    },
+    {
+      "src": "^/static/(.*)",
+      "dest": "/static/$1"
+    },
+    {
+      "src": "^/manifest.json",
+      "dest": "/manifest.json"
+    },
+    {
+      "src": "^/service-worker.js",
+      "dest": "/service-worker.js"
+    },
+    {
+      "src": "^/asset-manifest.json",
+      "dest": "/asset-manifest.json"
+    },
+    {
+      "src": "^/logo\\.(.*)\\.(svg|png|ico)",
+      "dest": "/logo.$1.$2"
+    },
+    {
+      "src": "^/(.*)\\.(js|css|png|jpg|jpeg|gif|ico|json|map|txt|svg|woff|woff2|ttf|eot)$",
+      "dest": "/$1.$2"
+    },
+    {
+      "src": "^/(.*)",
+      "dest": "/index.html"
+    }
+  ],
+  "github": {
+    "enabled": true,
+    "autoJobCancelation": true
+  },
+  "env": {
+    "NODE_ENV": "production"
+  },
+  "build": {
+    "env": {
+      "NODE_ENV": "production"
+    }
+  },
+  "regions": ["iad1"],
+  "public": true
+}
